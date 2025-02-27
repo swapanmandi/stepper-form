@@ -6,9 +6,9 @@ export default function ProgressBar() {
 
   return (
     <div>
-      <div className=" flex ">
+      <div className=" flex p-1 m-2 items-center justify-center">
         {[...Array(stepLength)].map((_, index) => (
-          <div key={index} className=" flex">
+          <div key={index} className=" flex items-center justify-center -m-0.5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -20,7 +20,7 @@ export default function ProgressBar() {
               strokeLinecap="round"
               strokeinejoin="round"
               className={`icon icon-tabler icons-tabler-outline icon-tabler-circle-check ${
-                currentStep >= index ? "text-emerald-500 transition-all delay-500 ease-in-out" : " text-white"
+                currentStep >= index ? "text-emerald-500 transition-all delay-500 ease-linear" : " text-white"
               } `}
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -29,8 +29,8 @@ export default function ProgressBar() {
             </svg>
             { index < stepLength-1 &&
             <div
-              className={` h-0.5 w-20 ${
-                currentStep > index ? " bg-emerald-500 transition-all delay-500 ease-in-out" : "bg-white"
+              className={` h-0.5 w-24 ${
+                currentStep > index ? " bg-emerald-500 transition-all delay-500 ease-linear" : "bg-white"
               }`}
             ></div>}
           </div>
