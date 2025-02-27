@@ -1,5 +1,5 @@
 import { useContext } from "react";
-
+import Button from "./components/Button";
 import "./App.css";
 import Personal from "./components/Personal";
 import Address from "./components/Address";
@@ -8,17 +8,7 @@ import ProgressBar from "./components/ProgressBar";
 import { DataContext } from "./dataContextStore/DataContextProvider";
 
 function App() {
-  const { currentStep, setCurrentStep, stepLength } = useContext(DataContext);
-
-  const handleBackButton = () => {
-    setCurrentStep((prev) => prev - 1);
-  };
-
-  const handleNextButton = () => {
-    setCurrentStep((prev) => prev + 1);
-  };
-
-  const handleSubitButton = () => {};
+  const { personalData, address, currentStep } = useContext(DataContext);
 
   const renderStep = () => {
     switch (currentStep) {
@@ -33,23 +23,15 @@ function App() {
     }
   };
 
+
   return (
-    <div>
+    <div className=" flex flex-col justify-center items-center">
       <div>
-        Stepper Form
+        <h1 className=" m-2"> Please Fill the Form</h1>
         <ProgressBar />
         <div>{renderStep()}</div>
       </div>
-
-      <div>
-        {currentStep > 0 && <button onClick={handleBackButton}>Back</button>}
-        {currentStep < stepLength - 1 && (
-          <button onClick={handleNextButton}>Next</button>
-        )}
-        {currentStep == stepLength - 1 && (
-          <button onClick={handleSubitButton}>Submit</button>
-        )}
-      </div>
+      <Button data={currentStep < 1 ? personalData : address} />
     </div>
   );
 }
