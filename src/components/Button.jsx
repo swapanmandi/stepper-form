@@ -10,7 +10,6 @@ export default function Button({ data }) {
     setAddress,
   } = useContext(DataContext);
 
-
   const handleBackButton = () => {
     setCurrentStep((prev) => prev - 1);
   };
@@ -41,7 +40,7 @@ export default function Button({ data }) {
     <div>
       {currentStep > 0 && (
         <button
-          className=" bg-red-400 p-1 m-2 rounded-md px-2"
+          className=" bg-red-400 p-1 m-2 rounded-md px-2 text-black"
           onClick={handleBackButton}
         >
           Back
@@ -50,7 +49,7 @@ export default function Button({ data }) {
       {currentStep < stepLength - 1 && (
         <button
           disabled={Object.values(data).some((value) => value.trim() === "")}
-          className={`bg-emerald-500 p-1 m-2 rounded-md px-2 ${
+          className={`bg-emerald-500 p-1 m-2 rounded-md px-2 text-black ${
             Object.values(data).some((value) => value.trim() === "")
               ? "bg-gray-400 cursor-not-allowed"
               : "bg-emerald-500 hover:bg-emerald-600"
@@ -62,7 +61,7 @@ export default function Button({ data }) {
       )}
       {currentStep == stepLength - 1 && (
         <button
-          className=" bg-blue-600 p-1 m-2 rounded-md px-2"
+          className=" bg-blue-600 p-1 m-2 rounded-md px-2 text-black"
           onClick={handleSubitButton}
         >
           Submit

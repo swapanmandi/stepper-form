@@ -8,14 +8,14 @@ export default function Personal() {
   };
 
   return (
-    <div>
+    <div className=" w-full h-[dvh] flex items-center justify-center">
       <form className="bg-slate-700 min-w-[40lvw] min-h-[50lvh] rounded-md p-2">
         <fieldset className="  flex flex-col justify-start flex-wrap">
           <legend>Personal Info</legend>
           <div className=" flex justify-start items-center ">
             <label className=" m-1">Full Name:</label>
             <input
-              className=" bg-slate-100 p-1 rounded-md text-black m-2"
+              className=" bg-slate-100 p-1 rounded-md text-black m-2 w-full lg:w-[30dvw]"
               type="text"
               name="fullName"
               placeholder="Your Name"
@@ -26,7 +26,7 @@ export default function Personal() {
           <div className=" flex justify-start items-center ">
             <label>Age:</label>
             <input
-              className=" bg-slate-100 p-1 rounded-md text-black m-2"
+              className=" bg-slate-100 p-1 rounded-md text-black m-2 w-full lg:w-[30dvw]"
               type="number"
               name="age"
               placeholder="Your Age"
@@ -37,7 +37,7 @@ export default function Personal() {
           <div className=" flex justify-start items-center">
             <label>Gender:</label>
             <select
-              className=" bg-slate-100 p-1 rounded-md text-black m-2"
+              className=" bg-slate-100 p-1 rounded-md text-black m-2 w-full lg:w-[30dvw]"
               name="gender"
               value={personalData.gender}
               onChange={handleOnChange}
@@ -51,7 +51,7 @@ export default function Personal() {
           <div className=" flex justify-start items-center">
             <label>Email:</label>
             <input
-              className=" bg-slate-100 p-1 rounded-md text-black m-2"
+              className=" bg-slate-100 p-1 rounded-md text-black m-2 w-full lg:w-[30dvw]"
               type="email"
               name="email"
               placeholder="Your Email"
@@ -63,7 +63,7 @@ export default function Personal() {
             <label>Mobile:</label>
 
             <input
-              className=" bg-slate-100 p-1 rounded-md text-black m-2"
+              className=" bg-slate-100 p-1 rounded-md text-black m-2 w-full lg:w-[30dvw]"
               type="tel"
               name="mobile"
               placeholder="Your Mobile No"

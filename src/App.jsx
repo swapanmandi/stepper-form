@@ -25,9 +25,9 @@ function App() {
 
 
   return (
-    <div className=" flex flex-col justify-center items-center">
-      <div>
-        <h1 className=" m-2"> Please Fill the Form</h1>
+    <div className="flex flex-col justify-center items-center">
+      <div className=" w-full h-full">
+        <h1 className=" m-2 font-semibold"> Please Fill the Form</h1>
         <ProgressBar />
         <div>{renderStep()}</div>
       </div>
